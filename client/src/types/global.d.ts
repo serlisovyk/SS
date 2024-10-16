@@ -4,11 +4,11 @@ declare module '*.css' {
 }
 
 declare module '*.png' {
-  const content: { [className: HTMLImageElement]: string }
+  const content: string
   export default content
 }
 
 declare module '*.svg' {
-  const content: { [className: HTMLImageElement]: string }
+  const content: string
   export default content
 }
