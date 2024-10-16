@@ -1,0 +1,21 @@
+.button {
+  background: var(--light-black);
+  padding: 23px 45px;
+  width: 181px;
+  height: 65px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  position: relative;
+}
+.button::after {
+  content: '';
+  display: block;
+  width: 65px;
+  height: 65px;
+  background-color: var(--dark-black);
+  /* background-image: url('img/arrow-light.svg'); */
+  position: absolute;
+  top: 0;
+  right: -60px;
+}
