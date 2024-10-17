@@ -34,6 +34,12 @@
   height: 70px;
   border-right: 1px solid #eaeaea;
 }
+
+.logoSearchWrapper {
+  display: flex;
+  align-items: center;
+}
+
 .contentList {
   display: flex;
   gap: 57px;
@@ -74,6 +80,10 @@
   border-right: 1px solid #eaeaea;
   cursor: pointer;
 }
+.activeLink {
+  background-color: var(--dark-black);
+}
+
 .link span {
   position: absolute;
   top: 0;
@@ -86,4 +96,16 @@
   border-radius: 50%;
   background-color: var(--light-orange);
   color: #fff;
+}
+.searchInput {
+  width: 500px;
+  padding-block: 30px;
+  padding-left: 40px;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 45%;
+  color: #000;
+}
+::placeholder {
+  color: #cecece;
 }
