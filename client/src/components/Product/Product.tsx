@@ -3,7 +3,11 @@ import heart from './heart-empty.svg'
 import product from './product.png'
 import cart from './cart.svg'
 
-export default function Product() {
+interface Props {
+  title: number
+}
+
+export default function Product({ title }: Props) {
   return (
     <div className={styles.product}>
       <div className={styles.top}>
@@ -17,7 +21,7 @@ export default function Product() {
       </div>
       <div className={styles.info}>
         <div className={styles.category}>женские</div>
-        <div className={styles.title}>Nike Air VaporMax 2023 Flyknit</div>
+        <div className={styles.title}>{title}</div>
         <div className={styles.colors}>
           Цвета: <br />
           <span></span>
