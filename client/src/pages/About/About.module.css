@@ -37,7 +37,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 90px;
+  padding-bottom: 90px;
 }
 
 .info {
@@ -48,6 +48,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 }
 
 .infoTitle {
@@ -61,7 +62,7 @@
 .infoText {
   max-width: 785px;
   font-weight: 400;
-  line-height: 104%;
+  line-height: 150%;
   color: #2e2e2e;
 }
 
@@ -96,6 +97,7 @@
   width: 360px;
   display: flex;
   flex-direction: column;
+  gap: 30px;
 }
 
 ::placeholder {
@@ -106,7 +108,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 20px;
+  padding-block: 20px;
 }
 
 .gratitudeText {
@@ -117,4 +119,57 @@
 
 .gratitudeText p {
   margin-bottom: 10px;
+}
+@media (max-width: 1000px) {
+  .gratitude {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+@media (max-width: 991px) {
+  .headingTitle {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .headingText {
+    margin-bottom: 24px;
+  }
+
+  .image {
+    padding-bottom: 60px;
+  }
+
+  .info {
+    padding-bottom: 70px;
+  }
+}
+@media (max-width: 767px) {
+  .headingTitle {
+    font-size: 24px;
+  }
+  .headingText {
+    margin-bottom: 12px;
+  }
+  .image {
+    padding-bottom: 30px;
+  }
+  .infoTitle {
+    font-size: 22px;
+    white-space: nowrap;
+  }
+  .infoInner {
+    flex-direction: column;
+  }
+  .info {
+    padding-bottom: 40px;
+  }
+}
+@media (max-width: 374px) {
+  .infoNewsletterForm {
+    width: 310px;
+  }
+  .infoNewsletterForm input {
+    width: 310px;
+  }
 }

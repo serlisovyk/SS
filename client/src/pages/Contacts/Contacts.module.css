@@ -71,7 +71,7 @@ h1 {
   color: #434343;
   margin-bottom: 40px;
 }
-form {
+.form form {
   max-width: 750px;
   display: flex;
   justify-content: center;

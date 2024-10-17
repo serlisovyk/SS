@@ -1,16 +1,19 @@
 .features {
   padding-block: 50px;
 }
+.features img {
+  min-width: 36px;
+}
 .featuresInner {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 60px;
+  gap: 3.125vw;
 }
 .featuresItem {
   display: flex;
   gap: 20px;
-  width: 412px;
+  max-width: 412px;
   height: 110px;
 }
 .featuresContent h2 {
@@ -23,4 +26,14 @@
 .featuresContent p {
   line-height: 167%;
   color: #4b4b4b;
+}
+
+@media (max-width: 991px) {
+  .features {
+    padding-block: 30px;
+  }
+  .featuresInner {
+    flex-direction: column;
+    gap: 40px;
+  }
 }
