@@ -61,8 +61,7 @@ export default function Contacts() {
         <div className={styles.map}>
           <iframe
             src={cities[activeTab].mapSrc}
-            width="900"
-            height="500"
+            style={{ width: '100%', height: '100%', border: 0 }}
             loading="lazy"
           ></iframe>
         </div>
@@ -77,8 +76,7 @@ export default function Contacts() {
               type="text"
               id="name"
               name="name"
-              className={styles.input}
-              style={{ marginRight: '20px' }}
+              className={styles.inputWithMargin}
               placeholder="Ваше имя"
               autoComplete="off"
               required
@@ -107,7 +105,8 @@ export default function Contacts() {
           </button>
         </form>
         <div className={styles.formText}>
-          Нажимая кнопку “Отправить” я соглашаюсь с <span>политикой конфиденциальности</span>
+          Нажимая кнопку “Отправить” я соглашаюсь с
+          <span>политикой конфиденциальности</span>
         </div>
       </div>
     </div>

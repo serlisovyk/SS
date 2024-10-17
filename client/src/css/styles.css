@@ -44,6 +44,9 @@ input {
 }
 
 @media (max-width: 374px) {
+  input {
+    width: 310px;
+  }
   .button-submit {
     width: 310px;
   }
