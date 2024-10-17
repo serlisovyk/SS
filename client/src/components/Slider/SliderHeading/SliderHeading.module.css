@@ -22,8 +22,3 @@
   margin-top: 5px;
   transform: rotate(180deg);
 }
-.products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
