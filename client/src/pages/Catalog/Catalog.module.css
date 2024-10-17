@@ -1,0 +1,7 @@
+.title {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 107%;
+  color: var(--dark-black);
+  margin-bottom: 30px;
+}

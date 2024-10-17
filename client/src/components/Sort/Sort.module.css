@@ -1,0 +1,32 @@
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  line-height: 67%;
+  color: #b5b5b5;
+}
+
+.bottomWrapper {
+  display: flex;
+  gap: 70px;
+}
+
+.limit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 67%;
+  color: var(--dark-black);
+}
+.limit button {
+  display: block;
+  padding: 16px;
+  border: 1px solid #eee;
+}
+
+.activeLimit {
+  border: 1px solid #212121 !important;
+}
