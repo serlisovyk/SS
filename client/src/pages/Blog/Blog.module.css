@@ -13,10 +13,11 @@
 
 .blogs {
   max-width: 1016px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
+
 .categories {
   width: 325px;
 }

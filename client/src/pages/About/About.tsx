@@ -1,5 +1,6 @@
 import Features from '../../components/Features/Features'
 import InfoNewsLetter from '../../components/InfoNewsLetters/infoNewsletter'
+import Slider from '../../components/Slider/Slider'
 import styles from './About.module.css'
 import about from './about.jpg'
 import sneakers from './sneakers.png'
@@ -83,6 +84,7 @@ export default function About() {
           <img src={sneakers} alt="Sneakers" />
         </div>
       </div>
+      <Slider title={'Последние публикации'} />
     </section>
   )
 }
