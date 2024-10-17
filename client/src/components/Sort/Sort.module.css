@@ -11,9 +11,12 @@
 
 .bottomWrapper {
   display: flex;
+  align-items: center;
   gap: 70px;
 }
-
+.sort {
+  position: relative;
+}
 .limit {
   display: flex;
   align-items: center;
@@ -29,4 +32,28 @@
 
 .activeLimit {
   border: 1px solid #212121 !important;
+}
+.sort strong {
+  line-height: 67%;
+  color: var(--dark-black);
+  margin-right: 16px;
+}
+.sort span {
+  line-height: 67%;
+  color: #414141;
+}
+.sortArrow,
+.sortArrowRotate {
+  margin-left: 50px;
+}
+.sortArrowRotate {
+  transform: rotate(180deg);
+}
+.popup {
+  position: absolute;
+  bottom: -120px;
+  right: 35px;
+}
+.popup li {
+  margin-bottom: 10px;
 }

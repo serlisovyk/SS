@@ -1,7 +1,10 @@
+import { useState } from 'react'
 import styles from './Sort.module.css'
 import useActions from '../../hooks/useActions'
 import { useAppSelector } from '../../hooks/useAppSelector'
 import { selectFilter } from '../../redux/slices/filterSlice'
+import arrow from './arrow.svg'
+import { ISort } from '../../types/types'
 
 const sortList = [
   { name: 'Цена по убыванию', sortProperty: 'price_asc' },
@@ -11,10 +14,18 @@ const sortList = [
 ]
 
 export default function Sort() {
-  const { setLimit } = useActions()
-  const { limit } = useAppSelector(selectFilter)
+  const { setLimit, setSort } = useActions()
+  const { limit, sort } = useAppSelector(selectFilter)
+
+  const [isSortOpen, setIsSortOpen] = useState(false)
+  const toogleSortOpen = () => setIsSortOpen(prev => !prev)
 
   const handleChangeLimit = (num: number) => setLimit(num)
+
+  const handleClickSortListItem = (item: ISort) => {
+    setSort(item)
+    setIsSortOpen(false)
+  }
 
   return (
     <div className={styles.inner}>
@@ -44,14 +55,22 @@ export default function Sort() {
             </button>
           </div>
           <div className={styles.sort}>
-            Сортировка:
-            <ul>
-              {sortList.map((item, i) => (
-                <li key={i} className={styles.sortItem}>
-                  {item.name}
-                </li>
-              ))}
-            </ul>
+            <strong>Сортировка:</strong>
+            <span onClick={() => toogleSortOpen()}>{sort.name}</span>
+            <img
+              src={arrow}
+              alt="Arrow"
+              className={isSortOpen ? styles.sortArrowRotate : styles.sortArrow}
+            />
+            {isSortOpen && (
+              <ul className={styles.popup}>
+                {sortList.map((item, i) => (
+                  <li key={i} onClick={() => handleClickSortListItem(item)}>
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>

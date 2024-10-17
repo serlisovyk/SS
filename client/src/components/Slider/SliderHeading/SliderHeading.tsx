@@ -1,4 +1,4 @@
-import { SliderHeadingProps } from '../../../types/types'
+import { ISliderHeadingProps } from '../../../types/types'
 import styles from './SliderHeading.module.css'
 import arrow from './arrow.svg'
 
@@ -6,7 +6,7 @@ export default function SliderHeading({
   title,
   onPrevClick,
   onNextClick,
-}: SliderHeadingProps) {
+}: ISliderHeadingProps) {
   return (
     <div className={styles.top}>
       <h2 className={styles.title}>
