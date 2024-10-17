@@ -79,7 +79,7 @@ export default function About() {
                   placeholder="Ваш Email"
                   autoComplete="off"
                 />
-                <button type="submit">Подписаться</button>
+                <button type="submit" className='button-submit'>Подписаться</button>
               </form>
               <span>
                 Согласен с <span> политикой конфиденциальности</span>

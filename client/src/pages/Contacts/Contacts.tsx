@@ -97,7 +97,9 @@ export default function Contacts() {
             placeholder="Текст вопроса"
             autoComplete="off"
           ></input>
-          <button type="submit">Отправить</button>
+          <button type="submit" className="button-submit">
+            Отправить
+          </button>
         </form>
       </div>
     </div>
