@@ -20,16 +20,6 @@ body {
   padding: 0 15px;
 }
 
-input {
-  width: 360px;
-  border-bottom: 1px solid var(--dark-black);
-  padding: 10px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 169%;
-  color: #2b2b2b;
-}
-
 .button-submit {
   background: var(--light-black);
   width: 330px;
@@ -39,6 +29,7 @@ input {
   color: #fff;
   margin-bottom: 24px;
 }
+
 .contactsButton {
   margin-inline: auto;
 }

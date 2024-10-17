@@ -32,6 +32,16 @@
   gap: 30px;
 }
 
+.infoNewsletterInput {
+  width: 360px;
+  border-bottom: 1px solid var(--dark-black);
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 169%;
+  color: #2b2b2b;
+}
+
 ::placeholder {
   color: #000 !important;
 }

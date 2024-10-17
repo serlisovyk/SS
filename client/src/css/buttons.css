@@ -22,3 +22,7 @@
   top: 0;
   right: -60px;
 }
+
+.button-dark {
+  background-color: var(--light-black);
+}

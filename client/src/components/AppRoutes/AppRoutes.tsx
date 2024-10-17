@@ -8,6 +8,7 @@ import Delivery from '../../pages/Delivery/Delivery'
 import Payment from '../../pages/Payment/Payment'
 import Contacts from '../../pages/Contacts/Contacts'
 import IndividualOrder from '../../pages/IndividualOrder/IndividualOrder'
+import NotFound from '../../pages/NotFound/NotFound'
 
 export default function AppRoutes() {
   return (
@@ -20,6 +21,7 @@ export default function AppRoutes() {
       <Route path={ROUTES.PAYMENT} element={<Payment />} />
       <Route path={ROUTES.CONTACTS} element={<Contacts />} />
       <Route path={ROUTES.INDIVIDUAL_ORDER} element={<IndividualOrder />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

@@ -27,6 +27,7 @@ export default function InfoNewsLetter() {
           type="email"
           id="email"
           name="email"
+          className={styles.infoNewsletterInput}
           value={email}
           onChange={handleChangeEmail}
           placeholder="Ваш Email"
