@@ -7,6 +7,7 @@ const filterSlice = createSlice({
   name: 'filter',
   initialState: {
     limit: 3,
+    search: '',
     sort: { name: 'Цена по убыванию', sortProperty: 'price_asc' } as ISort,
   },
   reducers: {
@@ -15,6 +16,9 @@ const filterSlice = createSlice({
     },
     setSort(state, { payload }: PayloadAction<ISort>) {
       state.sort = payload
+    },
+    setSearch(state, { payload }: PayloadAction<string>) {
+      state.search = payload
     },
   },
 })

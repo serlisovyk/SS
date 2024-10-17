@@ -1,11 +1,18 @@
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useState } from 'react'
 import styles from './Header.module.css'
 import logo from './logo.svg'
 import search from './search.svg'
 import heart from './heart.svg'
 import cart from './cart.svg'
+import { Link, useNavigate } from 'react-router-dom'
+import { ROUTES } from '../../utils/constants'
+import useActions from '../../hooks/useActions'
 
 export default function Header() {
+  const navigate = useNavigate()
+
+  const { setSearch } = useActions()
+
   const [isSearchActive, setIsSearchActive] = useState(false)
   const [searchActive, setSearchActive] = useState('')
 
@@ -13,28 +20,51 @@ export default function Header() {
   const handleChangeSearchValue = (e: ChangeEvent<HTMLInputElement>) =>
     setSearchActive(e.target.value)
 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (searchActive) {
+      setSearch(searchActive)
+      setSearchActive('')
+      navigate(ROUTES.CATALOG)
+    }
+  }
+
   return (
     <div className={styles.header}>
       <div className="container">
         <div className={styles.top}>
           <ul className={styles.topList}>
-            <li className={styles.topListItem}>О магазине</li>
-            <li className={styles.topListItem}>Наш блог</li>
-            <li className={styles.topListItem}>Доставка</li>
-            <li className={styles.topListItem}>Оплата</li>
-            <li className={styles.topListItem}>Контакты</li>
-            <li className={styles.topListItem}>Индивидуальный заказ</li>
+            <li className={styles.topListItem}>
+              <Link to={ROUTES.ABOUT}>О магазине</Link>
+            </li>
+            <li className={styles.topListItem}>
+              <Link to={ROUTES.BLOG}>Наш блог</Link>
+            </li>
+            <li className={styles.topListItem}>
+              <Link to={ROUTES.DELIVERY}>Доставка</Link>
+            </li>
+            <li className={styles.topListItem}>
+              <Link to={ROUTES.PAYMENT}>Оплата</Link>
+            </li>
+            <li className={styles.topListItem}>
+              <Link to={ROUTES.CONTACTS}>Контакты</Link>
+            </li>
+            <li className={styles.topListItem}>
+              <Link to={ROUTES.INDIVIDUAL_ORDER}>Индивидуальный заказ</Link>
+            </li>
           </ul>
           <div className={styles.login}>Вход / Регистрация</div>
         </div>
         <div className={styles.content}>
           <div className={styles.logoSearchWrapper}>
             <div className={styles.logo}>
-              <img src={logo} alt="Logo" />
+              <Link to={ROUTES.HOME}>
+                <img src={logo} alt="Logo" />
+              </Link>
             </div>
 
             {isSearchActive && (
-              <form>
+              <form onSubmit={handleSubmit}>
                 <label htmlFor="search"></label>
                 <input
                   type="text"
