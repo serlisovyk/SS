@@ -14,7 +14,7 @@ export default function Contacts() {
   return (
     <div className="container">
       <Breadcrumbs />
-      <h1>Наши контакты</h1>
+      <h1 className={styles.title}>Наши контакты</h1>
       <div className={styles.tabs}>
         {cities.map((city, i) => (
           <h2
@@ -71,36 +71,44 @@ export default function Contacts() {
         <h2>У вас есть вопросы? Напишите нам!</h2>
         <h3>Мы с радостью ответим на все интересующие вас вопросы.</h3>
         <form>
-          <label htmlFor="name"></label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Ваше имя"
-            autoComplete="off"
-            required
-          />
-          <label htmlFor="email"></label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Ваш email"
-            autoComplete="off"
-            required
-          />
+          <div className={styles.inputs}>
+            <label htmlFor="name"></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              className={styles.input}
+              style={{ marginRight: '20px' }}
+              placeholder="Ваше имя"
+              autoComplete="off"
+              required
+            />
+            <label htmlFor="email"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className={styles.input}
+              placeholder="Ваш email"
+              autoComplete="off"
+              required
+            />
+          </div>
           <label htmlFor="message"></label>
           <input
-            className={styles.input}
+            className={styles.bigInput}
             id="message"
             name="message"
             placeholder="Текст вопроса"
             autoComplete="off"
           ></input>
-          <button type="submit" className="button-submit">
+          <button type="submit" className="button-submit contactsButton">
             Отправить
           </button>
         </form>
+        <div className={styles.formText}>
+          Нажимая кнопку “Отправить” я соглашаюсь с <span>политикой конфиденциальности</span>
+        </div>
       </div>
     </div>
   )

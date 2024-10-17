@@ -39,6 +39,9 @@ input {
   color: #fff;
   margin-bottom: 24px;
 }
+.contactsButton {
+  margin-inline: auto;
+}
 
 @media (max-width: 374px) {
   .button-submit {
