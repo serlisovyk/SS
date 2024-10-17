@@ -1,0 +1,46 @@
+.infoNewsletter {
+  text-align: center;
+}
+
+.infoNewsletter h3 {
+  font-size: 24px;
+  line-height: 112%;
+  color: var(--dark-black);
+}
+
+.infoNewsletter span {
+  font-size: 14px;
+  color: #6b6e72;
+}
+
+.infoNewsletter span span {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.infoNewsletterText {
+  max-width: 340px;
+  line-height: 140%;
+  color: #393939;
+  margin-block: 12px;
+}
+
+.infoNewsletterForm {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+::placeholder {
+  color: #000 !important;
+}
+
+@media (max-width: 374px) {
+  .infoNewsletterForm {
+    width: 310px;
+  }
+  .infoNewsletterForm input {
+    width: 310px;
+  }
+}

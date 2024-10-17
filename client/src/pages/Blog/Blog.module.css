@@ -1,0 +1,49 @@
+.inner {
+  display: flex;
+  gap: 20px;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 45px;
+  line-height: 107%;
+  color: var(--dark-black);
+  margin-bottom: 40px;
+}
+
+.blogs {
+  max-width: 1016px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.categories {
+  width: 325px;
+}
+.categoriesTitle {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 117%;
+  color: #1d1d27;
+  margin-bottom: 20px;
+}
+.categoriesItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.categoriesItem h3 {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 115%;
+  text-transform: uppercase;
+  color: #232323;
+}
+.categoriesItem div {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 136%;
+  text-transform: uppercase;
+  color: #686868;
+}

@@ -1,24 +1,10 @@
-import { ChangeEvent, FormEvent, useState } from 'react'
 import Features from '../../components/Features/Features'
+import InfoNewsLetter from '../../components/InfoNewsLetters/infoNewsletter'
 import styles from './About.module.css'
 import about from './about.jpg'
 import sneakers from './sneakers.png'
 
 export default function About() {
-  const [email, setEmail] = useState('')
-
-  const handleChangeEmail = (e: ChangeEvent<HTMLInputElement>) =>
-    setEmail(e.target.value)
-
-  const handleSubmitEmail = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    if (email.trim().length === 0) return
-
-    console.log(`Email sent: ${email}`)
-    setEmail('')
-  }
-
   return (
     <section>
       <div className={styles.heading}>
@@ -58,33 +44,7 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className={styles.infoNewsletter}>
-              <h3>Подпишитесь на рассылку</h3>
-              <div className={styles.infoNewsletterText}>
-                <p>
-                  Регулярные скидки и спецпредложения, а так же новости компании.
-                </p>
-              </div>
-              <form
-                className={styles.infoNewsletterForm}
-                onSubmit={handleSubmitEmail}
-              >
-                <label htmlFor="email"></label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={email}
-                  onChange={handleChangeEmail}
-                  placeholder="Ваш Email"
-                  autoComplete="off"
-                />
-                <button type="submit" className='button-submit'>Подписаться</button>
-              </form>
-              <span>
-                Согласен с <span> политикой конфиденциальности</span>
-              </span>
-            </div>
+            <InfoNewsLetter />
           </div>
         </div>
       </div>

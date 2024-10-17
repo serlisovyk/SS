@@ -1,0 +1,52 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 498px;
+  height: 341px;
+  padding: 30px;
+}
+.marker {
+  background: #dbe5eb;
+  width: 73px;
+  height: 42px;
+  font-weight: 500;
+  padding: 16px 10px;
+  font-size: 12px;
+  line-height: 83%;
+  text-transform: uppercase;
+  color: var(--dark-black);
+}
+.title {
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 130%;
+  color: #fff;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.link {
+  position: relative;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 217%;
+  color: #fff;
+}
+.link::after {
+  content: '';
+  display: block;
+  width: 95px;
+  height: 3px;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  background: #fff;
+  transform: rotate(180deg);
+}
+.date {
+  font-size: 14px;
+  color: #fff;
+}
