@@ -1,24 +1,7 @@
 import { useState } from 'react'
 import styles from './Intro.module.css'
 import arrow from './arrow.svg'
-import intro from './intro.png'
-
-const slides = [
-  {
-    id: 1,
-    title: 'Air max Flyknit Racer',
-    text: 'Усиленный носок и прочный пластиковый каркас. Инновационная технология раскрывается через перфорированную стельку',
-    price: '7899 грн.',
-    image: intro,
-  },
-  {
-    id: 2,
-    title: 'Air max Flyknit Racer',
-    text: 'Эти кроссовки обеспечивают максимальный комфорт и стиль.',
-    price: '8999 грн.',
-    image: intro,
-  },
-]
+import { slides } from '../../utils/constants'
 
 export default function Intro() {
   const [currentSlide, setCurrentSlide] = useState(0)

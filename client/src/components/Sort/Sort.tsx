@@ -5,14 +5,7 @@ import { useAppSelector } from '../../hooks/useAppSelector'
 import { selectFilter } from '../../redux/slices/filterSlice'
 import arrow from './arrow.svg'
 import { ISort } from '../../types/types'
-
-const sortList = [
-  { name: 'Цена по убыванию', sortProperty: 'price_asc' },
-  { name: 'Цена по возрастанию', sortProperty: 'price_desc' },
-  { name: 'По наименованию, а-я', sortProperty: 'name_asc' },
-  { name: 'По наименованию, я-а', sortProperty: 'name_desc' },
-]
-const limits = [3, 6, 9]
+import { limits, sortList } from '../../utils/constants'
 
 export default function Sort() {
   const { setLimit, setSort } = useActions()

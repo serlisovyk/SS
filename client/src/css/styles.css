@@ -3,13 +3,35 @@
 @import url('./vars.css');
 @import url('./buttons.css');
 
-/* body {
-  font-family: 'Pragmatica';
-} */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
 
 .container {
   max-width: 1375px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+input {
+  width: 360px;
+  border-bottom: 1px solid var(--dark-black);
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 169%;
+  color: #2b2b2b;
+  margin-bottom: 24px;
+}
+
+button {
+  background: var(--light-black);
+  width: 360px;
+  height: 65px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 24px;
 }
