@@ -1,9 +1,24 @@
+import { ChangeEvent, FormEvent, useState } from 'react'
 import Features from '../../components/Features/Features'
 import styles from './About.module.css'
 import about from './about.jpg'
 import sneakers from './sneakers.png'
 
 export default function About() {
+  const [email, setEmail] = useState('')
+
+  const handleChangeEmail = (e: ChangeEvent<HTMLInputElement>) =>
+    setEmail(e.target.value)
+
+  const handleSubmitEmail = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (email.trim().length === 0) return
+
+    console.log(`Email sent: ${email}`)
+    setEmail('')
+  }
+
   return (
     <section>
       <div className={styles.heading}>
@@ -50,12 +65,17 @@ export default function About() {
                   Регулярные скидки и спецпредложения, а так же новости компании.
                 </p>
               </div>
-              <form className={styles.infoNewsletterForm}>
+              <form
+                className={styles.infoNewsletterForm}
+                onSubmit={handleSubmitEmail}
+              >
                 <label htmlFor="email"></label>
                 <input
                   type="email"
                   id="email"
                   name="email"
+                  value={email}
+                  onChange={handleChangeEmail}
                   placeholder="Ваш Email"
                   autoComplete="off"
                 />
