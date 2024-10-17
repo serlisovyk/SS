@@ -1,0 +1,26 @@
+.features {
+  padding-block: 50px;
+}
+.featuresInner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.featuresItem {
+  display: flex;
+  gap: 20px;
+  width: 412px;
+  height: 110px;
+}
+.featuresContent h2 {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 144%;
+  text-transform: uppercase;
+  color: var(--dark-black);
+}
+.featuresContent p {
+  line-height: 167%;
+  color: #4b4b4b;
+}

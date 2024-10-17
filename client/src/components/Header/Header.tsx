@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import { ChangeEvent, FormEvent, useState } from 'react'
 import styles from './Header.module.css'
 import logo from './logo.svg'
 import search from './search.svg'

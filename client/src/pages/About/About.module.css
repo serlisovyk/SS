@@ -1,0 +1,139 @@
+.heading {
+  padding-top: 25px;
+}
+
+.headingTitle {
+  font-weight: 500;
+  font-size: 39px;
+  line-height: 128%;
+  text-transform: uppercase;
+  color: var(--dark-black);
+  margin-bottom: 20px;
+}
+
+.headingTitle span {
+  position: relative;
+}
+
+.headingTitle span::after {
+  content: '';
+  background-color: var(--dark-black);
+  position: absolute;
+  top: 50%;
+  right: -140px;
+  display: block;
+  width: 123px;
+  height: 2px;
+}
+
+.headingText {
+  max-width: 725px;
+  line-height: 169%;
+  color: #2e2e2e;
+  margin-bottom: 44px;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 90px;
+}
+
+.info {
+  padding-bottom: 90px;
+}
+
+.infoInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoTitle {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 104%;
+  color: #2e2e2e;
+  margin-bottom: 16px;
+}
+
+.infoText {
+  max-width: 785px;
+  font-weight: 400;
+  line-height: 104%;
+  color: #2e2e2e;
+}
+
+.infoNewsletter {
+  text-align: center;
+}
+
+.infoNewsletter h3 {
+  font-size: 24px;
+  line-height: 112%;
+  color: var(--dark-black);
+}
+
+.infoNewsletter span {
+  font-size: 14px;
+  color: #6b6e72;
+}
+
+.infoNewsletter span span {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
+.infoNewsletterText {
+  max-width: 360px;
+  line-height: 140%;
+  color: #393939;
+  margin-block: 12px;
+}
+
+.infoNewsletterForm {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+}
+
+.infoNewsletterForm input {
+  border-bottom: 1px solid var(--dark-black);
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 169%;
+  color: #2b2b2b;
+  margin-bottom: 24px;
+}
+
+.infoNewsletterForm button {
+  background: var(--light-black);
+  height: 65px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+::placeholder {
+  color: #000 !important;
+}
+
+.gratitude {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.gratitudeText {
+  max-width: 785px;
+  line-height: 169%;
+  color: #2e2e2e;
+}
+
+.gratitudeText p {
+  margin-bottom: 10px;
+}
