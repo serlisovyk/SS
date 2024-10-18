@@ -26,3 +26,11 @@
 .button-dark {
   background-color: var(--light-black);
 }
+
+.button-orange {
+  background-color: var(--light-orange);
+}
+.button-orange::after {
+  content: '';
+  background-color: var(--dark-orange);
+}
