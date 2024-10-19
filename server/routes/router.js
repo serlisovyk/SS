@@ -10,7 +10,7 @@ router.use('/user', userRouter)
 router.use('/favorite', favouritesRouter)
 router.use('/card', CardRouter)
 router.use('/products', ProductsRouter)
-router.use('/catiegories', CatiegoriesRouter)
+router.use('/categories', CatiegoriesRouter)
 
 
 module.exports = router
