@@ -1,19 +1,61 @@
 const Product = require('../models/ProductsModel.js')
 
-
-// Консоль логи в getAll не фурычат(
-
 class ProductsController {
   async getAll(req, res) {
+    const {
+      limit = 3,
+      color,
+      size,
+      sortBy = 'price',
+      material,
+      price_min,
+      price_max,
+      search,
+      category,
+      page = 1,
+    } = req.query
+
     try {
-      console.log('Before loading Product model')
-      console.log(Product)
+      const query = {}
+
+      if (color) query['colors.name'] = color
+      if (size) query.sizes = size
+      if (material) query.material = material
+      if (category && category !== 'Все') query.category = category
+      if (search) query.$or = [{ title: { $regex: search, $options: 'i' } }]
+      const skip = (page - 1) * limit
+
+      if (price_min || price_max) {
+        query.price = {}
+        if (price_min) query.price.$gte = price_min
+        if (price_max) query.price.$lte = price_max
+      }
+
+      let sortOptions = {}
+      if (sortBy === 'price') {
+        sortOptions.price = 1
+      } else if (sortBy === '-price') {
+        sortOptions.price = -1
+      } else {
+        sortOptions[sortBy] = 1
+      }
+
       const products = await Product.find({})
-      console.log('Products loaded successfully')
-      res.status(200).json(products)
-    } catch (error) {
-      console.error('Error in getAll:', error)
-      res.status(500).json({ message: 'Error fetching products' })
+      await products.save().sort(sortOptions).limit(Number(limit)).skip(skip)
+
+      const totalProducts = await Product.countDocuments(query)
+
+      res
+        .status(200)
+        .json({
+          products,
+          total: totalProducts,
+          page: Number(page),
+          limit: Number(limit),
+        })
+    } catch (e) {
+      console.error(e)
+      res.status(500).json({ message: 'Ошибка при получении продуктов' })
     }
   }
 
