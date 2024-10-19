@@ -9,6 +9,8 @@ export enum ROUTES {
   INDIVIDUAL_ORDER = '/individual-order',
 }
 
+export const BASE_URL = 'http://localhost:3001'
+
 export const cities = [
   {
     name: 'Киев',

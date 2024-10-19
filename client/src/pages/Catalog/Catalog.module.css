@@ -5,3 +5,9 @@
   color: var(--dark-black);
   margin-bottom: 30px;
 }
+.catalog {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px 20px;
+}

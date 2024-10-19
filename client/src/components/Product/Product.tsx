@@ -1,13 +1,9 @@
 import styles from './Product.module.css'
 import heart from './heart-empty.svg'
-import product from './product.png'
+// import product from './product.png'
 import cart from './cart.svg'
 
-interface Props {
-  title: number
-}
-
-export default function Product({ title }: Props) {
+export default function Product({ title, price, images }: any) {
   return (
     <div className={styles.product}>
       <div className={styles.top}>
@@ -17,7 +13,7 @@ export default function Product({ title }: Props) {
         </div>
       </div>
       <div className={styles.image}>
-        <img src={product} alt="Product" />
+        <img src={images[0]} alt="Product" />
       </div>
       <div className={styles.info}>
         <div className={styles.category}>женские</div>
@@ -28,7 +24,7 @@ export default function Product({ title }: Props) {
           <span></span>
         </div>
         <div className={styles.bottom}>
-          <div className={styles.price}>7 899 ₽</div>
+          <div className={styles.price}>{price} грн.</div>
           <div className={styles.cart}>
             <img src={cart} alt="Cart" />
           </div>

@@ -6,7 +6,6 @@ const router = require('./routes/router.js')
 dotenv.config()
 
 const app = express()
-const port = process.env.PORT || 5000
 
 app.use(cors())
 app.use(express.json())
@@ -17,8 +16,8 @@ const startServer = async () => {
     await mongoose.connect(process.env.DB_URL)
     console.log('Connected to MongoDB')
 
-    app.listen(port, () => {
-      console.log(`Server started on PORT: ${port}`)
+    app.listen(process.env.PORT, () => {
+      console.log(`Server started on PORT: ${process.env.PORT}`)
     })
   } catch (err) {
     console.log('Error connecting to MongoDB:', err)

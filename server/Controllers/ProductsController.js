@@ -41,18 +41,18 @@ class ProductsController {
       }
 
       const products = await Product.find({})
-      await products.save().sort(sortOptions).limit(Number(limit)).skip(skip)
+        .sort(sortOptions)
+        .limit(Number(limit))
+        .skip(skip)
 
       const totalProducts = await Product.countDocuments(query)
 
-      res
-        .status(200)
-        .json({
-          products,
-          total: totalProducts,
-          page: Number(page),
-          limit: Number(limit),
-        })
+      res.status(200).json({
+        products,
+        total: totalProducts,
+        page: Number(page),
+        limit: Number(limit),
+      })
     } catch (e) {
       console.error(e)
       res.status(500).json({ message: 'Ошибка при получении продуктов' })
