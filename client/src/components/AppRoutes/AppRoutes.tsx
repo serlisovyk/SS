@@ -8,7 +8,7 @@ import Delivery from '../../pages/Delivery/Delivery'
 import Payment from '../../pages/Payment/Payment'
 import Contacts from '../../pages/Contacts/Contacts'
 import IndividualOrder from '../../pages/IndividualOrder/IndividualOrder'
-import SingleProduct from '../SingleProduct/SingleProduct'
+import SingleProduct from '../../pages/SingleProduct/SingleProduct'
 import NotFound from '../../pages/NotFound/NotFound'
 
 export default function AppRoutes() {
