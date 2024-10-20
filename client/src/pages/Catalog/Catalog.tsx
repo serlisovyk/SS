@@ -7,8 +7,12 @@ import { selectFilter } from '../../redux/slices/filterSlice'
 import styles from './Catalog.module.css'
 
 export default function Catalog() {
-  const { limit } = useAppSelector(selectFilter)
-  const { data, isLoading } = useGetProductsQuery({ limit })
+  const {
+    limit,
+    sort: { sortProperty: sortBy },
+  } = useAppSelector(selectFilter)
+
+  const { data, isLoading } = useGetProductsQuery({ limit, sortBy })
 
   if (!data) return <div>Продукты не найдены</div>
 
@@ -21,8 +25,8 @@ export default function Catalog() {
         <div>Загрузка...</div>
       ) : (
         <div className={styles.catalog}>
-          {data.products?.map((product: any) => (
-            <Product {...product} key={product.id} />
+          {data.products?.map(product => (
+            <Product {...product} key={product._id} />
           ))}
         </div>
       )}

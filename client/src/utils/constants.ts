@@ -7,6 +7,8 @@ export enum ROUTES {
   PAYMENT = '/payment',
   CONTACTS = '/contacts',
   INDIVIDUAL_ORDER = '/individual-order',
+  NOT_FOUND = '*',
+  SINGLE_PRODUCT = '/products/:id',
 }
 
 export const BASE_URL = 'http://localhost:3001'
@@ -27,25 +29,6 @@ export const cities = [
     email: 'dnipro@store.ua',
     mapSrc:
       'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d169324.7561501514!2d35.000356450000005!3d48.462298499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe303fd08468f%3A0xa1cf3d5f2c11aba!2z0JTQvdC10L_RgCwg0JTQvdC10L_RgNC-0L_QtdGC0YDQvtCy0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDQ5MDAw!5e0!3m2!1sru!2sua!4v1729173714634!5m2!1sru!2sua',
-  },
-]
-
-import intro from '../components/Intro/intro.png'
-
-export const slides = [
-  {
-    id: 1,
-    title: 'Air max Flyknit Racer',
-    text: 'Усиленный носок и прочный пластиковый каркас. Инновационная технология раскрывается через перфорированную стельку',
-    price: '7899 грн.',
-    image: intro,
-  },
-  {
-    id: 2,
-    title: 'Air max Flyknit Racer',
-    text: 'Эти кроссовки обеспечивают максимальный комфорт и стиль.',
-    price: '8999 грн.',
-    image: intro,
   },
 ]
 

@@ -2,8 +2,11 @@ import styles from './Product.module.css'
 import heart from './heart-empty.svg'
 import cart from './cart.svg'
 import { IProduct } from '../../types/types'
+import { Link } from 'react-router-dom'
+import { ROUTES } from '../../utils/constants'
 
 export default function Product({
+  _id,
   title,
   price,
   oldPrice,
@@ -11,6 +14,8 @@ export default function Product({
   colors,
   saleCF,
 }: IProduct) {
+  console.log(_id)
+
   return (
     <div className={styles.product}>
       <div className={styles.top}>
@@ -23,9 +28,9 @@ export default function Product({
           <img src={heart} alt="Heart" />
         </div>
       </div>
-      <div className={styles.image}>
+      <Link to={'/products/' + _id} className={styles.image}>
         <img src={images[0]} alt="Product" />
-      </div>
+      </Link>
       <div className={styles.info}>
         <div className={styles.category}>женские</div>
         <div className={styles.title}>{title}</div>
