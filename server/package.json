@@ -7,7 +7,7 @@
     "dev": "nodemon server.js"
   },
   "keywords": [],
-  "author": "Serhii Lisovyk and Mark Serous",
+  "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {

@@ -1,0 +1,17 @@
+{
+  "name": "ss",
+  "version": "1.0.0",
+  "description": "Online store",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd server && npm start",
+    "frontend": "cd client && npm start"
+  },
+  "keywords": [],
+  "author": "Serhii Lisovyk and Mark Serous",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
