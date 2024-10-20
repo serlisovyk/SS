@@ -81,11 +81,11 @@ export default function Header() {
 
           {!isSearchActive && (
             <ul className={styles.contentList}>
-              <li className={styles.contentListItem}>
+              <Link to={ROUTES.CATALOG} className={styles.contentListItem}>
                 <span></span>
                 <span></span>
                 Каталог
-              </li>
+              </Link>
               <li className={styles.contentListItem}>Мужские</li>
               <li className={styles.contentListItem}>Женские</li>
               <li className={styles.contentListItem}>Детские</li>

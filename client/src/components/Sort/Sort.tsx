@@ -7,7 +7,7 @@ import arrow from './arrow.svg'
 import { ISort } from '../../types/types'
 import { limits, sortList } from '../../utils/constants'
 
-export default function Sort() {
+export default function Sort({ totalProducts }: { totalProducts: number }) {
   const { setLimit, setSort } = useActions()
   const { limit, sort } = useAppSelector(selectFilter)
 
@@ -29,7 +29,9 @@ export default function Sort() {
     <div className={styles.inner}>
       <div className={styles.top}></div>
       <div className={styles.bottom}>
-        <div className={styles.info}>Показано 18 из 137 товаров</div>
+        <div className={styles.info}>
+          Показано {limit} из {totalProducts} товаров
+        </div>
         <div className={styles.bottomWrapper}>
           <div className={styles.limit}>
             Показывать по:
