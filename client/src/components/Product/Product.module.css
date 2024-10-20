@@ -1,20 +1,30 @@
 .product {
+  position: relative;
   width: 440px;
 }
 .top {
+  position: absolute;
+  width: 100%;
+  padding: 10px;
+  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.bun {
+.bun,
+.bunSale {
   margin-left: 10px;
   background-color: var(--dark-black);
+  font-weight: 700;
   padding: 10px;
   font-weight: 500;
-  font-size: 11px;
+  font-size: 13px;
   line-height: 109%;
   text-transform: uppercase;
   color: #fff;
+}
+.bunSale {
+  background-color: var(--light-orange);
 }
 .heart {
   margin-left: 10px;
@@ -23,7 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-block: 30px;
+  margin-bottom: 30px;
 }
 .category {
   font-weight: 500;
@@ -54,6 +64,7 @@
   height: 16px;
   border-radius: 50%;
   background-color: #000;
+  margin-bottom: 2px;
 }
 .bottom {
   display: flex;
@@ -64,6 +75,12 @@
   font-size: 19px;
   line-height: 137%;
   color: var(--dark-black);
+  margin-right: 10px;
+}
+.oldPrice {
+  line-height: 173%;
+  text-decoration: line-through;
+  color: #999;
 }
 .cart {
   margin-left: 10px;

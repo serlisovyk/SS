@@ -1,24 +1,23 @@
 import { useState } from 'react'
 import Product from '../Product/Product'
 import SliderHeading from './SliderHeading/SliderHeading'
-import SliderContent from './SliderContent/SliderContent'
+import { useGetProductsQuery } from '../../redux/apies/productsApi'
 
-export default function Slider({ title }) {
+interface ISliderProps {
+  title: string
+}
+
+export default function Slider({ title }: ISliderProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  const products = [
-    <Product title={111} />,
-    <Product title={222} />,
-    <Product title={333} />,
-    <Product title={444} />,
-    <Product title={555} />,
-    <Product title={666} />,
-    <Product title={777} />,
-    <Product title={888} />,
-    <Product title={999} />,
-  ]
-  const itemsToShow = 3
+  const { data, isLoading } = useGetProductsQuery({ limit: 6 })
 
+  if (isLoading) return <div>Загрузка...</div>
+  if (!data) return <div>Продукты не найдены</div>
+
+  const { products } = data
+
+  const itemsToShow = 3
   const slidesCount = products.length
 
   const handlePrevClick = () =>
@@ -26,11 +25,10 @@ export default function Slider({ title }) {
 
   const handleNextClick = () => setCurrentSlide(prev => (prev + 1) % slidesCount)
 
-  const visibleProducts = []
-  for (let i = 0; i < itemsToShow; i++) {
-    const index = (currentSlide + i) % slidesCount
-    visibleProducts.push(products[index])
-  }
+  const visibleProducts = products.slice(currentSlide, currentSlide + itemsToShow)
+
+  if (visibleProducts.length < itemsToShow)
+    visibleProducts.push(...products.slice(0, itemsToShow - visibleProducts.length))
 
   return (
     <div className="container">
@@ -39,7 +37,11 @@ export default function Slider({ title }) {
         onPrevClick={handlePrevClick}
         onNextClick={handleNextClick}
       />
-      <SliderContent items={visibleProducts} />
+      <div className="items">
+        {visibleProducts.map(product => (
+          <Product key={product._id} {...product} />
+        ))}
+      </div>
     </div>
   )
 }

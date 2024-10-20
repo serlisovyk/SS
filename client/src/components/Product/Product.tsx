@@ -1,13 +1,24 @@
 import styles from './Product.module.css'
 import heart from './heart-empty.svg'
-// import product from './product.png'
 import cart from './cart.svg'
+import { IProduct } from '../../types/types'
 
-export default function Product({ title, price, images }: any) {
+export default function Product({
+  title,
+  price,
+  oldPrice,
+  images,
+  colors,
+  saleCF,
+}: IProduct) {
   return (
     <div className={styles.product}>
       <div className={styles.top}>
-        <div className={styles.bun}>новинка</div>
+        {saleCF ? (
+          <div className={styles.bunSale}>-{saleCF}%</div>
+        ) : (
+          <div className={styles.bun}>новинка</div>
+        )}
         <div className={styles.heart}>
           <img src={heart} alt="Heart" />
         </div>
@@ -20,11 +31,19 @@ export default function Product({ title, price, images }: any) {
         <div className={styles.title}>{title}</div>
         <div className={styles.colors}>
           Цвета: <br />
-          <span></span>
-          <span></span>
+          {colors.map(color => (
+            <span
+              key={color.name}
+              className={styles.color}
+              style={{ backgroundColor: color.hex }}
+            />
+          ))}
         </div>
         <div className={styles.bottom}>
-          <div className={styles.price}>{price} грн.</div>
+          <div>
+            <span className={styles.price}>{price} грн.</span>
+            {oldPrice && <span className={styles.oldPrice}>{oldPrice} грн.</span>}
+          </div>
           <div className={styles.cart}>
             <img src={cart} alt="Cart" />
           </div>

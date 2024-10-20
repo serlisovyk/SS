@@ -1,17 +1,25 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import styles from './Intro.module.css'
 import arrow from './arrow.svg'
-import { slides } from '../../utils/constants'
+import { useGetProductsQuery } from '../../redux/apies/productsApi'
 
 export default function Intro() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
-  const nextSlide = () => setCurrentSlide(prev => (prev + 1) % slides.length)
+  const { data, isLoading } = useGetProductsQuery({})
+
+  if (isLoading) return <div>Загрузка...</div>
+  if (!data?.products || data?.products.length === 0)
+    return <div>Продукты не найдены</div>
+
+  const nextSlide = () => setCurrentSlide(prev => (prev + 1) % data?.products.length)
 
   const prevSlide = () =>
-    setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length)
+    setCurrentSlide(
+      prev => (prev - 1 + data?.products.length) % data?.products.length
+    )
 
-  const { title, text, price, image } = slides[currentSlide]
+  const { title, description, price, images } = data?.products[currentSlide]
 
   return (
     <div className={styles.intro}>
@@ -26,10 +34,10 @@ export default function Intro() {
               {title.split(' ')[2]} {title.split(' ')[3]}
             </h1>
             <div className={styles.text}>
-              <p>{text}</p>
+              <p>{description}</p>
             </div>
             <div className={styles.price}>
-              от <span>{price}</span>
+              от <span>{price} грн.</span>
             </div>
             <button type="button" className="button">
               Подробнее
@@ -44,11 +52,11 @@ export default function Intro() {
             </div>
           </div>
           <div className={styles.image}>
-            <img src={image} alt={title} />
+            <img src={images[0]} alt={title} />
           </div>
 
           <div className={styles.dots}>
-            {slides.map((_, i) => (
+            {data?.products.map((_, i) => (
               <div
                 key={i}
                 className={`${styles.dot} ${
